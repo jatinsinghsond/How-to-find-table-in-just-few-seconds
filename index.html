@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url("http://pluspng.com/img-png/big-image-png-2354.png");
+        background-position: center;
+      }
+      table {
+        border: 2px solid #ade0e0;
+      }
+      h1 {
+        color: white;
+        background-color: rgb(223, 41, 41);
+        border: 2px solid white;
+
+        &:hover {
+          color: rgb(223, 41, 41);
+          background-color: white;
+          border: 2px solid rgb(223, 41, 41);
+        }
+      }
+      .a1 {
+        border-right: none;
+        text-align: right;
+      }
+      .a2 {
+        border-left: none;
+        text-align: left;
+      }
+      td {
+        font-size: 50px;
+        word-spacing: 50px;
+        padding: 0 20px;
+      }
+      tr:nth-child(even) {
+        background: #ade0e0;
+        transition: 0.8s;
+
+        &:hover {
+          color: #fff;
+          background-color: rgb(238, 151, 57);
+          transform: scale(1);
+        }
+      }
+      tr:nth-child(odd) {
+        background: white;
+        transition: 0.8s;
+
+        &:hover {
+          color: #fff;
+          background-color: rgb(78, 78, 241);
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Find out the table of any numbers</h1>
+      <table cellspacing="0">
+        <script>
+          var a = prompt("Enter any number for the table");
+          if (a == "") {
+            document.write("Please enter a number...");
+          } else if (isNaN(a)) {
+            document.write("Only digits are allowed...");
+          } else {
+            a = parseInt(a);
+            for (var i = 1; i <= 10; i++) {
+              var result = a * i;
+              document.write(
+                "<tr><td class='a1'>",
+                a,
+                " x ",
+                i,
+                "</td><td class='a2'>",
+                " = ",
+                result,
+                "</td></tr>"
+              );
+            }
+          }
+        </script>
+      </table>
+    </center>
+  </body>
+</html>
